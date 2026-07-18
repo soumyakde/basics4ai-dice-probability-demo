@@ -171,16 +171,30 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   }
 });
 
+function renderWinnerBanner() {
+  const maxScore = Math.max(...scores);
+  const winners = GROUP_LABELS.filter((_, g) => scores[g] === maxScore);
+  const banner = document.getElementById("winnerBanner");
+  if (winners.length === 1) {
+    banner.textContent = `🏆 ${winners[0]} wins with ${maxScore} point${maxScore === 1 ? "" : "s"}!`;
+  } else {
+    const names = winners.length === 2
+      ? winners.join(" and ")
+      : winners.slice(0, -1).join(", ") + ", and " + winners[winners.length - 1];
+    banner.textContent = `🏆 It's a tie! ${names} all finish with ${maxScore} point${maxScore === 1 ? "" : "s"}!`;
+  }
+}
+
 function showFinal() {
   document.querySelector(".worksheet-header").classList.add("hidden");
   document.querySelector(".question-card").classList.add("hidden");
   document.getElementById("scorePanel").classList.add("hidden");
   document.getElementById("finalScreen").classList.remove("hidden");
   renderScorePanel("finalScorePanel");
+  renderWinnerBanner();
 }
 
-document.getElementById("restartBtn").addEventListener("click", () => {
-  if (!window.confirm("Restart the whole activity? This clears all 4 groups' scores.")) return;
+function resetActivity() {
   worksheetIndex = 0;
   questionIndex = 0;
   scores = Array(GROUP_COUNT).fill(0);
@@ -190,6 +204,16 @@ document.getElementById("restartBtn").addEventListener("click", () => {
   document.getElementById("finalScreen").classList.add("hidden");
   renderScorePanel("scorePanel");
   renderQuestion();
+}
+
+document.getElementById("restartBtn").addEventListener("click", () => {
+  if (!window.confirm("Restart the whole activity? This clears all 4 groups' scores.")) return;
+  resetActivity();
+});
+
+document.getElementById("nextCohortBtn").addEventListener("click", () => {
+  if (!window.confirm("Start the next cohort? This clears all 4 groups' scores.")) return;
+  resetActivity();
 });
 
 // ---------------------------------------------------------------------

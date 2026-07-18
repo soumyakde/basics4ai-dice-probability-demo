@@ -46,5 +46,10 @@
 
 /* ---------- Final screen ---------- */
 .final-screen { text-align: center; margin-top: 30px; }
+.winner-banner {
+  border: 2px solid var(--gold); background: var(--paper-alt); padding: 18px 22px; margin: 20px 0;
+  font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700;
+}
+.final-tally { margin-bottom: 24px; }
 .final-tally .score-card { padding: 20px 18px; }
 .final-tally .group-score { font-size: 2.2rem; }
