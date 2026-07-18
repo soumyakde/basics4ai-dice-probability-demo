@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dice Probability Challenge — Basics4AI</title>
+<meta name="description" content="Facilitator-led guided probability worksheets for 4 groups, with live scoring and explanations.">
+<link rel="stylesheet" href="/static/base.css">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand"><span class="mark">4AI</span>Dice Probability Challenge</div>
+    <button type="button" class="btn btn-outline" style="padding:8px 16px;" id="restartBtn">Restart Activity</button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Facilitator-led, 4 groups</span>
+    <h1>Dice Probability Challenge</h1>
+    <p class="lede">Work through each worksheet's questions as a class. Enter each group's answer, check it, and see the reasoning before moving on.</p>
+  </div>
+</header>
+
+<div class="demo-shell">
+
+  <div class="score-panel" id="scorePanel"></div>
+
+  <div class="worksheet-header">
+    <span class="worksheet-progress" id="worksheetProgress"></span>
+    <h2 id="worksheetTitle"></h2>
+    <p class="worksheet-subtitle" id="worksheetSubtitle"></p>
+  </div>
+
+  <div class="question-card">
+    <div class="question-progress" id="questionProgress"></div>
+    <h3 id="questionText"></h3>
+    <p class="question-hint" id="questionHint"></p>
+
+    <div id="autoAnswerArea" class="hidden"></div>
+    <div id="manualAnswerArea" class="hidden"></div>
+
+    <button type="button" class="btn btn-primary" id="checkBtn">Check Answers</button>
+
+    <div class="explanation-box hidden" id="explanationBox"></div>
+
+    <button type="button" class="btn btn-primary hidden" id="nextBtn">Next Question →</button>
+  </div>
+
+  <div class="final-screen hidden" id="finalScreen">
+    <h2>All worksheets complete!</h2>
+    <div class="score-panel final-tally" id="finalScorePanel"></div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container footer-inner">
+    <p class="fine">Basics4AI · Non-research demo — nothing is stored beyond this browser session. Part of Soumya K. De's PhD research, University at Buffalo.</p>
+  </div>
+</footer>
+
+<script src="/static/checkers.js"></script>
+<script src="/static/worksheets.js"></script>
+<script src="/static/game.js"></script>
+</body>
+</html>
