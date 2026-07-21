@@ -25,7 +25,7 @@
 @media (max-width: 560px) { .group-answer-row { grid-template-columns: 90px 1fr 32px; } }
 .group-answer-row .group-label { font-weight: 700; font-family: var(--font-mono); font-size: 0.85rem; }
 .group-answer-row input[type="text"] {
-  width: 100%; padding: 10px 12px; border: 1px solid var(--line); background: var(--paper);
+  width: 100%; padding: 10px 12px; border: 1px solid var(--line); background: var(--paper); color: var(--ink);
   font-family: var(--font-sans); font-size: 0.95rem;
 }
 .group-answer-row input[type="text"]:disabled { background: var(--paper-alt); color: var(--ink-soft); }
@@ -36,7 +36,7 @@
 .manual-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .manual-row .group-label { font-weight: 700; font-family: var(--font-mono); font-size: 0.85rem; width: 90px; flex-shrink: 0; }
 .manual-row .manual-btn {
-  padding: 8px 16px; border: 1px solid var(--line); background: var(--paper); cursor: pointer; font-weight: 600;
+  padding: 8px 16px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; font-weight: 600;
 }
 .manual-row .manual-btn.correct-btn.active { background: rgba(46,125,79,0.15); border-color: #2e7d4f; color: #2e7d4f; }
 .manual-row .manual-btn.incorrect-btn.active { background: var(--accent-tint); border-color: var(--accent); color: var(--accent); }
